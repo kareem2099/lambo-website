@@ -113,3 +113,7 @@ setInterval(() => {
         scrollAmount += scrollStep;
     }
 }, scrollInterval);
+
+function exploreNow() {
+    window.location.href = "/explore/explore.html";
+}
