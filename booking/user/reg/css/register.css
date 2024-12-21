@@ -1,0 +1,52 @@
+/* Register Page */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #000, #333);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.register-section {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.register-section h1 {
+    margin-bottom: 20px;
+    color: #fdb813;
+}
+
+.register-section form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+.register-section form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+}
+
+.register-btn {
+    background: #fdb813;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background: #ffc845;
+}

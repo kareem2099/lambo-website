@@ -1,0 +1,504 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+#home {
+    height: 100vh;
+    background: url('../lambo-home.jpg') no-repeat center center/cover;
+    color: rgb(145, 25, 25);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 1s ease-out;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.hero-content button {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.hero-content button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Dynamic Taglines */
+#dynamic-tagline {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Splash Screen */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#splash-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#splash-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#splash-screen p {
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 10;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Features Section */
+#features {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    max-width: 300px;
+    opacity: 50;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.feature i {
+    font-size: 2rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.feature:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Car Showcase */
+.car-showcase {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.car-showcase img {
+    width: 300px;
+    height: auto;
+    scroll-snap-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.car-showcase img:hover {
+    transform: scale(1.1);
+}
+
+/* Car Slider Section */
+#car-slider {
+    background: #111;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    overflow: hidden; /* Prevent scrollbars */
+    position: relative;
+}
+
+#car-slider .car-slider {
+    display: flex;
+    gap: 20px;
+    animation: scrollCars 20s linear infinite;
+    justify-content: flex-start;
+    width: max-content;
+}
+
+#car-slider .car-card {
+    background: #222;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    min-width: 400px;
+    max-width: 400px;
+    flex-shrink: 0;
+}
+
+#car-slider .car-card img {
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+#car-slider .car-card img:hover {
+    transform: scale(1.1);
+}
+
+#car-slider .car-card h3 {
+    font-size: 1.2rem;
+    color: #f6c700;
+    margin-top: 5px;
+}
+
+/* Animation for continuous scrolling */
+@keyframes scrollCars {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #car-slider .car-card {
+        min-width: 250px;
+    }
+}
+
+
+/* Countdown Timer */
+#event-countdown {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Navigation Styles */
+header {
+    background-color: #000;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    padding: 0.5rem 2rem;
+    transition: background-color 0.3s ease;
+}
+
+header:hover {
+    background-color: #222;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1rem;
+    color: #f6c700;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #fff;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #6b00f6;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a.active {
+    color: #ffcc00;
+    text-decoration: underline;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Tagline Section */
+#tagline-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.tagline {
+    display: none;
+    text-align: center;
+    margin-bottom: 50px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.tagline h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.tagline img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.tagline.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Quick Navigation Bar */
+.quick-nav {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quick-nav a {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.quick-nav a:hover {
+    background-color: #ffcc00;
+}
+
+/* About Section */
+/* About Us Section Styling */
+.about-section {
+    background: #111; /* Dark background for luxury */
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.about-section h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #f6c700; /* Lamborghini gold accent */
+}
+
+.about-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+}
+
+.about-section h3 i {
+    margin-right: 10px;
+    color: #f6c700;
+}
+
+/* History Timeline */
+.history ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.history li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    border-left: 3px solid #f6c700;
+    padding-left: 15px;
+    line-height: 1.6;
+}
+
+/* Vision & Mission */
+.vision-mission p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Core Values */
+.core-values {
+    margin: 40px 0;
+}
+
+.core-values .value-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.core-values .value {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #222, #333);
+    color: #f6c700;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.core-values .value:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+}
+
+.core-values .value i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Achievements & Global Presence */
+.achievements, .global-presence {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.achievements h3, .global-presence h3 {
+    color: #f6c700;
+}
+
+/* Section Dividers */
+.about-section > div {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #333;
+}
+
+.about-section > div:last-child {
+    border-bottom: none;
+}
+
+/* Icon Styling */
+.about-section i {
+    color: #f6c700;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .core-values .value-grid {
+        flex-direction: column;
+    }
+
+    .history li {
+        font-size: 1rem;
+    }
+
+    .vision-mission p {
+        font-size: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+header {
+    animation: slideDown 0.5s ease-out;
+}

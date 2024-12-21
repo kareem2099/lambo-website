@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini Booking</title>
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+    <!-- Welcome Section -->
+    <header class="welcome-section">
+        <h1>Book Your Dream Lamborghini</h1>
+        <p>Choose your favorite model and embark on a thrilling journey!</p>
+    </header>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <div class="form-container">
+            <div class="form-tabs">
+                <button id="login-tab" class="active-tab">Login</button>
+                <button id="register-tab">Register</button>
+            </div>
+            <div id="login-form" class="form-content active-content">
+                <form>
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div id="register-form" class="form-content">
+                <form>
+                    <label for="register-name">Full Name:</label>
+                    <input type="text" id="register-name" placeholder="Enter your full name" required>
+
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" placeholder="Enter your email" required>
+
+                    <label for="register-password">Password:</label>
+                    <input type="password" id="register-password" placeholder="Enter your password" required>
+
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/booking.js"></script>
+</body>
+</html>
