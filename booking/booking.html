@@ -5,61 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lamborghini Booking</title>
     <link rel="stylesheet" href="css/booking.css">
-    <link rel="stylesheet" href="../css/style.css">
-
 </head>
 <body>
-    <!-- Welcome Section -->
-    <header class="welcome-section">
+    <header class="header">
         <h1>Book Your Dream Lamborghini</h1>
-        <p>Choose your favorite model and embark on a thrilling journey!</p>
     </header>
 
-    <!-- Booking Section -->
-    <section id="booking">
-        <div class="form-container">
-            <div class="form-tabs">
-                <button id="login-tab" class="active-tab">Login</button>
-                <button id="register-tab">Register</button>
-            </div>
-            <div id="login-form" class="form-content active-content">
-                <form>
-                    <label for="login-email">Email:</label>
-                    <input type="email" id="login-email" placeholder="Enter your email" required>
-
-                    <label for="login-password">Password:</label>
-                    <input type="password" id="login-password" placeholder="Enter your password" required>
-
-                    <button type="submit">Login</button>
-                </form>
-            </div>
-            <div id="register-form" class="form-content">
-                <form>
-                    <label for="register-name">Full Name:</label>
-                    <input type="text" id="register-name" placeholder="Enter your full name" required>
-
-                    <label for="register-email">Email:</label>
-                    <input type="email" id="register-email" placeholder="Enter your email" required>
-
-                    <label for="register-password">Password:</label>
-                    <input type="password" id="register-password" placeholder="Enter your password" required>
-
-                    <button type="submit">Register</button>
-                </form>
-            </div>
+    <section class="cars-container">
+        <div class="car-card" data-car="Aventador">
+            <img src="/explore/images/lambo-aventador.jpg" alt="Lamborghini Aventador">
+            <h2>Aventador</h2>
+            <p>Starting at $20,000/day</p>
+            <label for="days-aventador">Select days:</label>
+            <select id="days-aventador" class="days-select">
+                <option value="1">1 Day - $20,000</option>
+                <option value="7">7 Days - $100,000</option>
+                <option value="14">14 Days - $180,000</option>
+                <option value="30">30 Days - $300,000</option>
+            </select>
+            <button class="book-now" data-message="Aventador - Experience unparalleled speed and luxury!" data-video="/explore/Lamborghini%20Models/aventador/videos/aventador.mp4">Book Now</button>
+        </div>
+        <div class="car-card" data-car="Huracan">
+            <img src="/explore/images/Lambo_Huracan.jpeg" alt="Lamborghini Huracan">
+            <h2>Huracan</h2>
+            <p>Starting at $20,000/day</p>
+            <label for="days-Huracan">Select days:</label>
+            <select id="days-Huracan" class="days-select">
+                <option value="1">1 Day - $20,000</option>
+                <option value="7">7 Days - $100,000</option>
+                <option value="14">14 Days - $180,000</option>
+                <option value="30">30 Days - $300,000</option>
+            </select>
+            <button class="book-now" data-message="Huracan - A blend of elegance and power!"  data-video="/explore/Lamborghini%20Models/Huracan/videos/huracan.mp4">Book Now</button>
+        </div>
+        <div class="car-card" data-car="Urus">
+            <img src="/explore/images/lambo-urus.jpeg" alt="Lamborghini Urus">
+            <h2>Urus</h2>
+            <p>Starting at $20,000/day</p>
+            <label for="days-Urus">Select days:</label>
+            <select id="days-Urus" class="days-select">
+                <option value="1">1 Day - $20,000</option>
+                <option value="7">7 Days - $100,000</option>
+                <option value="14">14 Days - $180,000</option>
+                <option value="30">30 Days - $300,000</option>
+            </select>
+            <button class="book-now" data-message="Urus - The ultimate luxury SUV!"  data-video="/explore/Lamborghini%20Models/urus/videos/urus.mp4">Book Now</button>
+        </div>
+        <div class="car-card" data-car="Sián">
+            <img src="/explore/images/Lambo_Sián.jpeg" alt="Lamborghini Sián">
+            <h2>Sián</h2>
+            <p>Starting at $20,000/day</p>
+            <label for="days-Urus">Select days:</label>
+            <select id="days-Urus" class="days-select">
+                <option value="1">1 Day - $20,000</option>
+                <option value="7">7 Days - $100,000</option>
+                <option value="14">14 Days - $180,000</option>
+                <option value="30">30 Days - $300,000</option>
+            </select>
+            <button class="book-now" data-message="Sián - The hybrid of the future!"  data-video="/explore/Lamborghini%20Models/Sián/videos/sian.mp4">Book Now</button>
+        </div>
+        <div class="car-card" data-car="Gallardo">
+            <img src="/explore/images/lambo-gallardo.jpg" alt="Lamborghini Gallardo">
+            <h2>Gallardo</h2>
+            <p>Starting at $20,000/day</p>
+            <label for="days-Urus">Select days:</label>
+            <select id="days-Urus" class="days-select">
+                <option value="1">1 Day - $20,000</option>
+                <option value="7">7 Days - $100,000</option>
+                <option value="14">14 Days - $180,000</option>
+                <option value="30">30 Days - $300,000</option>
+            </select>
+            <button class="book-now" data-message="Gallardo - A timeless masterpiece!"  data-video="/explore/Lamborghini%20Models/gallardo/videos/gallardo.mp4">Book Now</button>
+        </div>
+        <div class="car-card" data-car="Veneno">
+            <img src="/explore/images/lambo-veneno.jpg" alt="Lamborghini Veneno">
+            <h2>Veneno</h2>
+            <p>Starting at $20,000/day</p>
+            <label for="days-Veneno">Select days:</label>
+            <select id="days-Veneno" class="days-select">
+                <option value="1">1 Day - $20,000</option>
+                <option value="7">7 Days - $100,000</option>
+                <option value="14">14 Days - $180,000</option>
+                <option value="30">30 Days - $300,000</option>
+            </select>
+            <button class="book-now" data-message="Veneno - The pinnacle of automotive innovation!" data-video="/explore/Lamborghini%20Models/veneno/videos/veneno.mp4">Book Now</button>
         </div>
     </section>
 
-    <!-- Quick Navigation Bar -->
-    <div class="quick-nav">
-        <a href="home.html" title="Home Page">Home</a>
-        <a href="about.html" title="About Us">About</a>
-        <a href="explore/explore.html" title="Explore">Explore</a>
-        <a href="contact.html" title="Contact">Contact</a>
-        <a href="configurator/configurator.html" title="configurator">Configurator</a>
-    </div>
+   <!-- Booking Message and Video -->
+   <div id="booking-message" class="hidden">
+    <video id="booking-video" autoplay muted>
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p id="message-text"></p>
+</div>
 
     <script src="js/booking.js"></script>
-    <script src="../js/script.js"></script> <!-- Add header.js -->
+    <script src="/user/js/script.js"></script>
 </body>
 </html>

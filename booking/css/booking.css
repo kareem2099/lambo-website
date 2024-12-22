@@ -1,122 +1,130 @@
-/* General Page Styles */
+/* General Body Styles */
 body {
     font-family: 'Arial', sans-serif;
+    background: #000; /* Black background for a luxurious feel */
     margin: 0;
-    background: linear-gradient(120deg, #000, #333);
-    color: #fff;
+    color: #fff; /* White text for contrast */
 }
 
-/* Welcome Section */
-.welcome-section {
+/* Header Styling */
+.header {
+    background-color: #fdb813; /* Lamborghini yellow */
+    color: #000; /* Black text for bold contrast */
     text-align: center;
-    padding: 50px 20px;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.welcome-section h1 {
+.header h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.welcome-section p {
-    font-size: 1.2rem;
-    color: #ddd;
-}
-
-/* Booking Section */
-#booking {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    padding: 20px;
-}
-
-.form-container {
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-}
-
-/* Form Tabs */
-.form-tabs {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.form-tabs button {
-    background: none;
-    border: 1px solid #fdb813;
-    color: #fdb813;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-    width: 48%;
-    font-size: 1rem;
     font-weight: bold;
+    margin: 0;
 }
 
-.form-tabs button:hover,
-.form-tabs button.active-tab {
-    background: #fdb813;
-    color: #000;
+/* Container for Car Cards */
+.cars-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px;
 }
 
-/* Form Content */
-.form-content {
-    display: none;
-    animation: fadeIn 0.5s ease-in-out;
+/* Car Card Styles */
+.car-card {
+    background: #fff; /* White card background for contrast */
+    border: 2px solid #fdb813; /* Yellow border for branding */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4); /* Subtle red shadow */
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-.form-content.active-content {
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.6); /* Stronger red shadow on hover */
+}
+
+.car-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #000; /* Black border for emphasis */
+}
+
+/* Label and Select Styling */
+label {
     display: block;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    color: #ddd;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #000; /* Black for contrast against white card */
+    font-weight: bold;
     text-align: left;
 }
 
-form input {
+select.days-select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background: #222;
-    color: #fff;
+    padding: 12px;
     font-size: 1rem;
+    border: 2px solid #fdb813; /* Yellow border for consistency */
+    border-radius: 5px;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-form button {
-    background: #fdb813;
-    padding: 10px;
+select.days-select:focus {
+    border-color: #ff0000; /* Red border on focus */
+    background-color: #ffe6e6; /* Subtle red tint */
+}
+
+/* Button Styling */
+button.book-now {
+    background-color: #ff0000; /* Bold red button */
+    color: #fff; /* White text for contrast */
+    padding: 12px 20px;
+    font-size: 1rem;
     border: none;
     border-radius: 5px;
-    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
-    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+    margin-top: 10px;
 }
 
-form button:hover {
-    background: #ffc845;
+button.book-now:hover {
+    background-color: #fdb813; /* Lamborghini yellow on hover */
+    transform: scale(1.05); /* Slight scaling effect */
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Booking Message and Video */
+#booking-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000; /* Black background for luxury feel */
+    color: #fdb813; /* Lamborghini yellow for text */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    max-width: 600px;
+    width: 80%;
+}
+
+#booking-video {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #fdb813; /* Yellow border for emphasis */
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
 }
