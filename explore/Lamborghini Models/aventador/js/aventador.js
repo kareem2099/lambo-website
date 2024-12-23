@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Video interaction
     const video = document.querySelector("video");
-
     video.addEventListener("mouseenter", () => {
         console.log("Hovering over the video");
     });
@@ -28,3 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Function to open fullscreen modal
+function expandModel(model) {
+    document.getElementById("fullscreen-modal-" + model).classList.add("active");
+}
+
+// Function to close fullscreen modal
+function closeFullscreen(model) {
+    document.getElementById("fullscreen-modal-" + model).classList.remove("active");
+}

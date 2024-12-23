@@ -6,11 +6,13 @@
     <title>Lamborghini Gallardo</title>
     <link rel="stylesheet" href="css/gallardo-style.css">
     <script defer src="js/gallardo-script.js"></script>
+
 </head>
 <body>
     <header>
         <h1 class="animate-title">Lamborghini Gallardo</h1>
     </header>
+    
     <main>
         <!-- Video Section -->
         <section id="car-video">
@@ -21,17 +23,32 @@
             </video>
         </section>
 
-        <!-- 3D Model Section -->
-        <section id="car-3d-model">
-            <h2>3D Interactive Model</h2>
-            <div class="model-container">
-                <iframe title="Lamborghini Gallardo 3D Model" frameborder="0"
+       <!-- 3D Model Section -->
+<section id="car-3d-model">
+    <h2>3D Interactive Model</h2>
+    <div class="model-container">
+        <div class="model-thumbnail" onclick="expandModel()">
+            <iframe title="Lamborghini Gallardo 3D Model" frameborder="0"
                     allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
                     allow="autoplay; fullscreen; xr-spatial-tracking"
                     src="https://sketchfab.com/models/86691e28bae34cffa896b148c895e58d/embed">
-                </iframe>
-            </div>
-        </section>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Fullscreen Modal -->
+<div id="fullscreen-modal" class="fullscreen-modal">
+    <div class="fullscreen-content">
+        <iframe title="Lamborghini Gallardo 3D Model Fullscreen" frameborder="0"
+                allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                src="https://sketchfab.com/models/86691e28bae34cffa896b148c895e58d/embed">
+        </iframe>
+        <button onclick="closeFullscreen()">Close</button>
+    </div>
+</div>
+
 
         <!-- Features Section -->
         <section id="car-features">

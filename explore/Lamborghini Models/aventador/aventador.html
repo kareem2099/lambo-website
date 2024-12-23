@@ -18,6 +18,29 @@
                 Your browser does not support the video tag.
             </video>
         </section>
+
+        <!-- 3D Model Section for Aventador -->
+        <section id="car-3d-model-aventador">
+            <h2>3D Interactive Aventador Model</h2>
+            <div class="model-container">
+                <div class="model-thumbnail" onclick="expandModel('aventador')">
+                    <div class="sketchfab-embed-wrapper">
+                        <iframe title="Lamborghini Aventador 3D" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/938d3e3642cf4ea895c62c2a4bf6fc08/embed"></iframe>
+                        <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                        </p>
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <!-- Fullscreen Modal for Aventador -->
+        <div id="fullscreen-modal-aventador" class="fullscreen-modal">
+            <div class="fullscreen-content">
+                <iframe title="Lamborghini Aventador Fullscreen" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/938d3e3642cf4ea895c62c2a4bf6fc08/embed"></iframe>
+                <button onclick="closeFullscreen('aventador')">Close</button>
+            </div>
+        </div>
+
         <section id="car-features">
             <h2>Features</h2>
             <ul>
@@ -27,6 +50,7 @@
                 <li><strong>Price:</strong> $393,695</li>
             </ul>
         </section>
+
         <section id="car-gallery">
             <h2>Gallery</h2>
             <div class="gallery-container">
