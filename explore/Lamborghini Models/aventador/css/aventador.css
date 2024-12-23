@@ -16,10 +16,11 @@ header {
 }
 
 header h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin: 0;
     text-transform: uppercase;
     font-weight: bold;
+    letter-spacing: 5px;
     animation: title-fade-in 3s ease-in-out, title-color-change 6s infinite;
 }
 
@@ -51,6 +52,8 @@ section h2 {
     color: #ffcc00;
     position: relative;
     margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.6);
 }
 
 section h2::after {
@@ -67,6 +70,7 @@ section h2::after {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 20px;
 }
 
 .sketchfab-embed-wrapper iframe {
@@ -75,11 +79,12 @@ section h2::after {
     border-radius: 15px;
     border: 5px solid #ffcc00;
     box-shadow: 0 8px 20px rgba(255, 204, 0, 0.8);
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .sketchfab-embed-wrapper iframe:hover {
     transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 204, 0, 0.8);
 }
 
 /* Features Section */
@@ -90,22 +95,24 @@ section h2::after {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    margin-top: 30px;
 }
 
 #car-features ul li {
     font-size: 1.5rem;
     background: #222;
-    padding: 10px 20px;
+    padding: 15px 25px;
     border-radius: 10px;
     border: 2px solid #ffcc00;
     box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 #car-features ul li:hover {
     transform: scale(1.1);
     background: #ffcc00;
     color: #000;
+    box-shadow: 0 8px 25px rgba(255, 204, 0, 0.8);
 }
 
 /* Gallery Section */
@@ -209,4 +216,22 @@ footer a:hover {
 
 .fullscreen-content button:hover {
     background-color: #ffa500;
+}
+
+/* Interactive Button Hover */
+button {
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 18px;
+    background: #ffcc00;
+    color: #fff;
+    border: 2px solid #ff6600;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ff6600;
+    color: #000;
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
 }

@@ -56,7 +56,7 @@ function initializeSplashScreen() {
                 splashScreen.style.display = "none";
                 document.getElementById("home").scrollIntoView({ behavior: "smooth" });
             }, 500);
-        }, 5000);
+        }, 15000);
     }
 }
 

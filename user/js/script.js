@@ -61,6 +61,23 @@ function initializeSplashScreen() {
     const splashVideo = document.getElementById("splash-video");
 
     if (splashScreen && splashVideo) {
+        // Attempt to play the video with sound
+        splashVideo.play().then(() => {
+            // Video started playing
+            console.log("Video is playing with sound.");
+        }).catch(error => {
+            console.error("Error playing video:", error);
+        });
+
+        // Try to unmute after 1 second (in case of initial mute issues)
+        setTimeout(() => {
+            if (splashVideo.muted) {
+                splashVideo.muted = false;  // Unmute video after a short delay
+                console.log("Unmuting video.");
+            }
+        }, 1000);
+
+        // Hide splash screen after 15 seconds
         setTimeout(() => {
             splashVideo.pause();
             splashScreen.classList.add("hidden");
@@ -68,9 +85,10 @@ function initializeSplashScreen() {
                 splashScreen.style.display = "none";
                 document.getElementById("home").scrollIntoView({ behavior: "smooth" });
             }, 500);
-        }, 5000);
+        }, 15000);
     }
 }
+
 
 // Tagline rotation with dynamic background images
 function setupTaglineRotation() {
