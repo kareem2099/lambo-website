@@ -49,10 +49,16 @@ body {
 
 /* Dynamic Taglines */
 #dynamic-tagline {
-    font-size: 2.5rem;
+    font-size: 2.5rem; 
     margin-top: 20px;
     opacity: 0; /* Initially hidden */
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(10px); /* Slightly offset for animation effect */
+}
+
+#dynamic-tagline.show {
+    opacity: 1;
+    transform: translateY(0); /* Moves to normal position */
 }
 
 /* Splash Screen */

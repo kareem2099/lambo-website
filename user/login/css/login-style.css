@@ -7,7 +7,7 @@ body {
     color: #fff;
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Ensures proper stacking of header and content */
+    flex-direction: column;
     align-items: center;
 }
 
@@ -19,8 +19,8 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
 
 .navbar {
@@ -28,36 +28,30 @@ header {
     justify-content: center;
     gap: 2rem;
     list-style: none;
-    padding: 0;
     margin: 0;
-}
-
-.navbar li {
-    display: inline-block;
+    padding: 0;
 }
 
 .navbar a {
     text-decoration: none;
-    font-family: 'Arial Black', sans-serif;
     font-size: 1rem;
     color: #f6c700;
     text-transform: uppercase;
-    padding: 0.5rem;
     transition: color 0.3s ease;
 }
 
-.navbar a:hover {
+.navbar a:hover, .navbar a:focus {
     color: #fff;
 }
 
 /* Login Container */
 .login-container {
-    flex: 1; /* Takes up remaining vertical space below the header */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -68,15 +62,14 @@ header {
     border-radius: 10px;
     width: 400px;
     text-align: center;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
 }
 
-/* Heading */
 .login-box h1 {
     font-size: 2.5rem;
     font-weight: bold;
     color: #f6c700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .login-box p {
@@ -85,16 +78,14 @@ header {
     margin-bottom: 2rem;
 }
 
-/* Form Group */
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; /* Adds space between label and input fields */
     text-align: left;
 }
 
 .form-group label {
     display: block;
-    font-size: 1rem;
-    font-weight: bold;
+    margin-bottom: 1rem;
     color: #f6c700;
     margin-bottom: 0.5rem;
 }
@@ -105,9 +96,12 @@ header {
     font-size: 1rem;
     border-radius: 5px;
     border: none;
-    outline: none;
     background: #222;
     color: #fff;
+}
+
+.form-group input:focus {
+    outline: 2px solid #f6c700;
 }
 
 /* Button */
@@ -122,27 +116,30 @@ header {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s, transform 0.3s ease;
+    margin-top: 1.5rem;
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
     background-color: #6b00f6;
     color: #fff;
     transform: scale(1.05);
 }
 
 /* Register Link */
+
 .register-link {
-    margin-top: 1rem;
+    margin-top: 1.5rem; /* Adds space before "Don't have an account?" */
     font-size: 0.9rem;
     color: #ccc;
+    text-align: center;
 }
 
 .register-link a {
     color: #f6c700;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .register-link a:hover {
@@ -155,8 +152,6 @@ header {
         width: 90%;
         padding: 1.5rem;
     }
-
-    .login-box h1 {
-        font-size: 2rem;
-    }
 }
+
+

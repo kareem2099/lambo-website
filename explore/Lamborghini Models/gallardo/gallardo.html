@@ -9,39 +9,49 @@
 </head>
 <body>
     <header>
-        <h1>Lamborghini Gallardo</h1>
+        <h1 class="animate-title">Lamborghini Gallardo</h1>
     </header>
     <main>
         <!-- Video Section -->
         <section id="car-video">
             <h2>Timeless Performance</h2>
-            <video controls autoplay>
+            <video controls autoplay muted loop>
                 <source src="videos/gallardo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </section>
-        
+
+        <!-- 3D Model Section -->
+        <section id="car-3d-model">
+            <h2>3D Interactive Model</h2>
+            <div class="model-container">
+                <iframe title="Lamborghini Gallardo 3D Model" frameborder="0"
+                    allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/86691e28bae34cffa896b148c895e58d/embed">
+                </iframe>
+            </div>
+        </section>
+
         <!-- Features Section -->
         <section id="car-features">
             <h2>Features</h2>
             <ul>
-                <li>Engine: V10 5.2L</li>
-                <li>Top Speed: 325 km/h</li>
-                <li>0-100 km/h: 3.9 seconds</li>
-                <li>Price: $181,900</li>
+                <li><strong>Engine:</strong> V10 5.2L</li>
+                <li><strong>Top Speed:</strong> 325 km/h</li>
+                <li><strong>0-100 km/h:</strong> 3.9 seconds</li>
+                <li><strong>Price:</strong> $181,900</li>
             </ul>
         </section>
-        
+
         <!-- Gallery Section -->
         <section id="car-gallery">
             <h2>Gallery</h2>
             <div class="gallery-container">
-                <!-- Front and Back Views -->
                 <div class="gallery-column">
                     <img src="images/gallardo-front.jpg" alt="Lamborghini Gallardo - Front View">
                     <img src="images/gallardo-back.jpg" alt="Lamborghini Gallardo - Back View">
                 </div>
-                <!-- Side Left and Side Right Views -->
                 <div class="gallery-column">
                     <img src="images/gallardo-side-left.jpg" alt="Lamborghini Gallardo - Side Left View">
                     <img src="images/gallardo-side-right.jpg" alt="Lamborghini Gallardo - Side Right View">

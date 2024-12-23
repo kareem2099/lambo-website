@@ -59,6 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.proceedToColor = () => {
         // Dynamically populate color options with images based on the selected model
+        if(!customization.model) {
+            alert("Please select a model before proceeding!");
+            return;
+        }
         const colors = carColors[customization.model];
         colorOptionsContainer.innerHTML = ""; // Clear existing options
         Object.entries(colors).forEach(([color, imgSrc]) => {
