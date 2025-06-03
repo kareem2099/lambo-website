@@ -8,10 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupTaglineRotation();
     setupAutoScrollShowcase();
     handleColorChange();
-<<<<<<< HEAD
-    setupParallaxHero(); // Added parallax setup
-=======
->>>>>>> origin/main
+    setupParallaxHero(); 
 });
 
 // Smooth scrolling for anchor links
@@ -19,38 +16,38 @@ function setupSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute("href")).scrollIntoView({
-                behavior: "smooth"
-            });
+            const targetElement = document.querySelector(this.getAttribute("href"));
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
         });
     });
 }
 
 // Load the header dynamically
 function loadHeader() {
-<<<<<<< HEAD
-    const headerPath = "../../header.html"; // Corrected path to root header.html
-=======
-    const headerPath = "../header.html";
->>>>>>> origin/main
+    const headerPath = "/header.html"; // Use absolute path from server root
     console.log("Attempting to load header from:", headerPath);
 
     fetch(headerPath)
         .then(response => {
-            if (!response.ok) throw new Error(`Failed to load header. Status: ${response.status}`);
+            if (!response.ok) throw new Error(`Failed to load header. Status: ${response.status} ${response.statusText} for ${response.url}`);
             return response.text();
         })
         .then(data => {
-            document.body.insertAdjacentHTML("afterbegin", data);
+            const firstChild = document.body.firstChild;
+            document.body.insertBefore(document.createRange().createContextualFragment(data), firstChild);
             console.log("Header loaded successfully.");
+            // After header is loaded, re-evaluate active links if needed or ensure CSS handles it
         })
         .catch(err => console.error("Error loading header:", err));
 }
 
-<<<<<<< HEAD
 // General Intersection Observer for fade-in animations on scroll
 function setupLazyLoad() {
-    const elementsToFadeIn = document.querySelectorAll('section, .feature, .contact-card'); // Added .contact-card
+    const elementsToFadeIn = document.querySelectorAll('section, .feature, .contact-card'); 
 
     if (elementsToFadeIn.length === 0) {
         return;
@@ -59,49 +56,24 @@ function setupLazyLoad() {
     const observer = new IntersectionObserver((entries, observerInstance) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add 'fade-in-section' first to set initial opacity: 0
-                // then add 'visible' to trigger the animation.
-                // This order is important if 'fade-in-section' isn't already on the element.
-                // However, for simplicity, we can assume elements that should fade in
-                // will have 'fade-in-section' class added in HTML or via JS at setup.
-                // For now, let's ensure they have it before adding 'visible'.
                 if (!entry.target.classList.contains('fade-in-section')) {
                     entry.target.classList.add('fade-in-section');
                 }
-                // Add a tiny delay to ensure the opacity:0 from .fade-in-section is applied before animation starts
                 setTimeout(() => {
                     entry.target.classList.add('visible');
                 }, 50);
                 
-                observerInstance.unobserve(entry.target); // Animate only once
+                observerInstance.unobserve(entry.target); 
             }
         });
-    }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+    }, { threshold: 0.1 }); 
 
     elementsToFadeIn.forEach(el => {
-        // Add .fade-in-section to all target elements initially if not present
-        // This ensures they are hidden before they become visible
         if (!el.classList.contains('fade-in-section')) {
             el.classList.add('fade-in-section');
         }
         observer.observe(el);
     });
-=======
-// Lazy load animations for elements
-function setupLazyLoad() {
-    const featureElements = document.querySelectorAll(".feature");
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = "translateY(0)";
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    featureElements.forEach(feature => observer.observe(feature));
->>>>>>> origin/main
 }
 
 // Splash screen initialization
@@ -110,116 +82,96 @@ function initializeSplashScreen() {
     const splashVideo = document.getElementById("splash-video");
 
     if (splashScreen && splashVideo) {
-<<<<<<< HEAD
-        // Video should be autoplaying due to attributes in index.html (autoplay muted loop playsinline)
         console.log("Splash screen video found.");
+        // Ensure video is playing (attributes should handle this, but good to check)
+        if (splashVideo.paused) {
+            splashVideo.play().catch(e => console.error("Splash video play error:", e));
+        }
 
-        // Hide splash screen and redirect after 5 seconds
         setTimeout(() => {
-            splashVideo.pause(); // Pause video before redirect
-            splashScreen.classList.add("hidden");
+            if (splashVideo) splashVideo.pause(); 
+            if (splashScreen) splashScreen.classList.add("hidden");
+            
             setTimeout(() => {
-                // splashScreen.style.display = "none"; // Not strictly necessary before redirect
-                window.location.href = "home.html"; // Redirect to home.html
-            }, 500); // Delay for fade-out animation
-        }, 5000); // Splash screen duration: 5 seconds
-    } else if (document.getElementById("home")) { // Only run scrollIntoView if #home exists (i.e., not on splash-only index.html)
-        // This part is for pages other than index.html if they had a splash screen concept
-        // For now, index.html is the only one with #splash-screen
-=======
-        // Attempt to play the video with sound
-        splashVideo.play().then(() => {
-            // Video started playing
-            console.log("Video is playing with sound.");
-        }).catch(error => {
-            console.error("Error playing video:", error);
-        });
-
-        // Try to unmute after 1 second (in case of initial mute issues)
-        setTimeout(() => {
-            if (splashVideo.muted) {
-                splashVideo.muted = false;  // Unmute video after a short delay
-                console.log("Unmuting video.");
-            }
-        }, 1000);
-
-        // Hide splash screen after 15 seconds
-        setTimeout(() => {
-            splashVideo.pause();
-            splashScreen.classList.add("hidden");
-            setTimeout(() => {
-                splashScreen.style.display = "none";
-                document.getElementById("home").scrollIntoView({ behavior: "smooth" });
-            }, 500);
-        }, 15000);
->>>>>>> origin/main
+                // Check if current page is index.html before redirecting
+                if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html')) {
+                    window.location.href = "home.html"; 
+                }
+            }, 500); 
+        }, 5000); 
+    } else if (document.getElementById("home")) { 
+        // This logic was for scrolling into view if #home existed,
+        // but splash screen is only on index.html now.
+        // Can be removed or adapted if other pages get splash screens.
     }
 }
 
-
 // Tagline rotation with dynamic background images
 function setupTaglineRotation() {
-<<<<<<< HEAD
     const taglineElement = document.getElementById("dynamic-tagline");
-    if (!taglineElement) { // Guard clause
+    const homeSection = document.getElementById("home"); // Target the #home section for background image
+    
+    if (!taglineElement || !homeSection) { 
         return;
     }
     const taglines = [
-        { text: "Speed Redefined", image: "../../lambo-home.jpg" },
-        { text: "Luxury in Motion", image: "../../explore/images/lambo-aventador.jpg" },
-        { text: "Experience the Power", image: "../../explore/images/lambo-veneno.jpg" }
-=======
-    const taglines = [
-        { text: "Speed Redefined", image: "../lambo-home.jpg" },
-        { text: "Luxury in Motion", image: "../explore/images/lambo-aventador.jpg" },
-        { text: "Experience the Power", image: "../explore/images/lambo-veneno.jpg" }
->>>>>>> origin/main
+        { text: "Speed Redefined", image: "../../lambo-home.jpg" }, // Corrected path
+        { text: "Luxury in Motion", image: "../../explore/images/lambo-aventador.jpg" }, // Corrected path
+        { text: "Experience the Power", image: "../../explore/images/lambo-veneno.jpg" } // Corrected path
     ];
     let index = 0;
 
     const rotate = () => {
-        const taglineElement = document.getElementById("dynamic-tagline");
-        const heroContent = document.getElementById("hero-content");
-        taglineElement.textContent = taglines[index].text;
-        document.getElementById("home").style.backgroundImage = `url('${taglines[index].image}')`;
-        heroContent.style.opacity = 1;
+        const currentTagline = taglines[index];
+        taglineElement.textContent = currentTagline.text;
+        // Ensure the #home element exists before trying to set its background
+        if (homeSection) {
+            homeSection.style.backgroundImage = `url('${currentTagline.image}')`;
+        }
+        // heroContent might not exist on all pages with dynamic tagline, add check
+        const heroContent = document.getElementById("hero-content"); 
+        if (heroContent) {
+            heroContent.style.opacity = 1;
+        }
         index = (index + 1) % taglines.length;
     };
 
-    rotate();
+    rotate(); 
     setInterval(rotate, 3000);
 }
 
 // Auto-scroll functionality for the car showcase
 function setupAutoScrollShowcase() {
-    const carShowcase = document.querySelector(".car-slider");
-<<<<<<< HEAD
-    if (!carShowcase) { // Guard clause
+    const carShowcase = document.querySelector(".car-slider"); // This is the inner div that scrolls
+    if (!carShowcase) { 
         return;
     }
-=======
->>>>>>> origin/main
     let scrollAmount = 0;
-    const scrollStep = 200;
-    const scrollInterval = 10000;
+    const scrollStep = 1; // Smoother scroll
+    const scrollInterval = 50; // Faster interval for smoother scroll
 
-    setInterval(() => {
-        if (carShowcase.scrollWidth - carShowcase.clientWidth <= scrollAmount) {
-            carShowcase.scrollTo({ left: 0, behavior: "smooth" });
-            scrollAmount = 0;
+    function scroll() {
+        if (carShowcase.scrollWidth - carShowcase.clientWidth <= carShowcase.scrollLeft) {
+            carShowcase.scrollTo({ left: 0, behavior: 'auto' }); // Instant jump back
         } else {
-            carShowcase.scrollBy({ left: scrollStep, behavior: "smooth" });
-            scrollAmount += scrollStep;
+            carShowcase.scrollBy({ left: scrollStep, behavior: 'auto' });
         }
-    }, scrollInterval);
+    }
+    setInterval(scroll, scrollInterval);
 }
 
-// Dynamic color change for car previews
+// Dynamic color change for car previews (configurator)
 function handleColorChange() {
-    window.changeColor = color => {
-        const carPreview = document.getElementById("car-preview");
-        carPreview.src = `images/${color}-car.jpg`;
-    };
+    // Ensure this function is only relevant/called on pages where 'car-preview' exists
+    if (typeof window.changeColor === 'undefined' && document.getElementById('car-preview')) {
+        window.changeColor = color => {
+            const carPreview = document.getElementById("car-preview");
+            if (carPreview) { // Check if element exists
+                 // Path needs to be relative to where this function is used (configurator.html)
+                carPreview.src = `images/${color}-car.jpg`;
+            }
+        };
+    }
 }
 
 // Redirect to login or register pages
@@ -237,23 +189,18 @@ function handleRegister() {
 function exploreNow() {
     window.location.href = "/explore/explore.html";
 }
-<<<<<<< HEAD
 
 // Parallax effect for the Hero section background
 function setupParallaxHero() {
     const homeSection = document.getElementById("home");
-    if (!homeSection) { // Guard clause, only run if home section exists
+    if (!homeSection) { 
         return;
     }
 
     window.addEventListener("scroll", () => {
         const offsetY = window.pageYOffset;
-        // Ensure the effect only applies when the home section is somewhat in view
-        // and to avoid issues if the background image is not set yet by setupTaglineRotation
-        if (homeSection.style.backgroundImage) {
+        if (homeSection.style.backgroundImage) { // Check if background image is set
              homeSection.style.backgroundPositionY = offsetY * 0.7 + "px";
         }
     });
 }
-=======
->>>>>>> origin/main

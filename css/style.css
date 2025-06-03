@@ -1,6 +1,5 @@
 /* General Styles */
 body {
-<<<<<<< HEAD
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated font for consistency */
     margin: 0;
     padding: 0; /* Base body padding is 0 */
@@ -46,19 +45,6 @@ body {
     height: 100vh;
     background: url('../lambo-home.jpg') no-repeat center center/cover; /* Initial background, JS will change it */
     color: #fff; /* Changed to white for better contrast */
-=======
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Hero Section */
-#home {
-    height: 100vh;
-    background: url('../lambo-home.jpg') no-repeat center center/cover;
-    color: rgb(145, 25, 25);
->>>>>>> origin/main
     text-align: center;
     display: flex;
     justify-content: center;
@@ -76,7 +62,6 @@ body {
 }
 
 .hero-content h1 {
-<<<<<<< HEAD
     font-size: 3.5rem; /* Slightly increased size */
     margin: 0;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
@@ -102,43 +87,17 @@ body {
     color: #111; /* Dark text */
     transform: translateY(-3px); /* Slight lift effect */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-=======
-    font-size: 3rem;
-    margin: 0;
-    text-shadow: 2px 2px 4px #000;
-}
-
-.hero-content button {
-    background-color: #ffcc00;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.hero-content button:hover {
-    background-color: #000;
-    color: #fff;
->>>>>>> origin/main
 }
 
 /* Dynamic Taglines */
 #dynamic-tagline {
-<<<<<<< HEAD
     font-size: 2.8rem; /* Slightly increased size */
-=======
-    font-size: 2.5rem; 
->>>>>>> origin/main
     margin-top: 20px;
     opacity: 0; /* Initially hidden */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     transform: translateY(10px); /* Slightly offset for animation effect */
-<<<<<<< HEAD
     color: #fff; /* Ensured white color */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Added text shadow */
-=======
->>>>>>> origin/main
 }
 
 #dynamic-tagline.show {
@@ -186,7 +145,6 @@ body {
 
 /* Features Section */
 #features {
-<<<<<<< HEAD
     padding: 80px 20px; /* Further increased padding */
     background-color: #1a1a1a; /* Darker background for a more premium Lambo feel */
     text-align: center;
@@ -199,11 +157,6 @@ body {
     margin-bottom: 50px; /* Increased margin */
     text-transform: uppercase;
     letter-spacing: 1px;
-=======
-    padding: 50px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
->>>>>>> origin/main
 }
 
 .feature-grid {
@@ -217,7 +170,6 @@ body {
 
 .feature {
     text-align: center;
-<<<<<<< HEAD
     padding: 30px; /* Increased padding */
     background: #2c2c2c; /* Darker card background */
     color: #f0f0f0; /* Light text color for dark background */
@@ -259,33 +211,10 @@ body {
 
 .feature:hover i {
     transform: scale(1.1) rotate(5deg); /* Icon scales and slightly rotates on card hover */
-=======
-    padding: 20px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1;
-    max-width: 300px;
-    opacity: 50;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.feature i {
-    font-size: 2rem;
-    color: #ffcc00;
-    margin-bottom: 10px;
-}
-
-.feature:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
->>>>>>> origin/main
 }
 
 /* Car Showcase */
-.car-showcase {
+.car-showcase { /* This class might be unused if #car-slider is the primary one */
     display: flex;
     gap: 10px;
     overflow-x: auto;
@@ -306,21 +235,14 @@ body {
 
 /* Car Slider Section */
 #car-slider {
-<<<<<<< HEAD
     background: #0a0a0a; /* Darker, more premium background */
     color: #fff;
     padding: 60px 20px; /* Increased padding */
-=======
-    background: #111;
-    color: #fff;
-    padding: 50px 20px;
->>>>>>> origin/main
     text-align: center;
     overflow: hidden; /* Prevent scrollbars */
     position: relative;
 }
 
-<<<<<<< HEAD
 #car-slider h2 { /* Style for the section title */
     font-size: 2.5rem;
     color: #f6c700; /* Lamborghini Gold */
@@ -332,18 +254,11 @@ body {
     display: flex;
     gap: 30px; /* Increased gap */
     animation: scrollCars 25s linear infinite; /* Slightly adjusted animation speed */
-=======
-#car-slider .car-slider {
-    display: flex;
-    gap: 20px;
-    animation: scrollCars 20s linear infinite;
->>>>>>> origin/main
     justify-content: flex-start;
     width: max-content;
 }
 
 #car-slider .car-card {
-<<<<<<< HEAD
     background: #1c1c1c; /* Slightly lighter card background */
     border-radius: 15px; /* Increased border-radius */
     padding: 25px; /* Increased padding */
@@ -385,35 +300,6 @@ body {
     font-size: 0.9rem;
     color: #ccc;
     line-height: 1.6;
-=======
-    background: #222;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    min-width: 400px;
-    max-width: 400px;
-    flex-shrink: 0;
-}
-
-#car-slider .car-card img {
-    width: 400px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 5px;
-    transition: transform 0.3s ease;
-}
-
-#car-slider .car-card img:hover {
-    transform: scale(1.1);
-}
-
-#car-slider .car-card h3 {
-    font-size: 1.2rem;
-    color: #f6c700;
-    margin-top: 5px;
->>>>>>> origin/main
 }
 
 /* Animation for continuous scrolling */
@@ -426,17 +312,6 @@ body {
     }
 }
 
-<<<<<<< HEAD
-=======
-/* Responsive Design */
-@media (max-width: 768px) {
-    #car-slider .car-card {
-        min-width: 250px;
-    }
-}
-
->>>>>>> origin/main
-
 /* Countdown Timer */
 #event-countdown {
     font-size: 1.5rem;
@@ -447,76 +322,6 @@ body {
     border-radius: 10px;
 }
 
-<<<<<<< HEAD
-=======
-/* Navigation Styles */
-header {
-    background-color: #000;
-    color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-    padding: 0.5rem 2rem;
-    transition: background-color 0.3s ease;
-}
-
-header:hover {
-    background-color: #222;
-}
-
-.navbar {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar li {
-    display: inline-block;
-}
-
-.navbar a {
-    text-decoration: none;
-    font-family: 'Arial Black', sans-serif;
-    font-size: 1rem;
-    color: #f6c700;
-    text-transform: uppercase;
-    position: relative;
-    padding: 0.5rem;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #fff;
-}
-
-.navbar a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #6b00f6;
-    transition: width 0.3s ease;
-}
-
-.navbar a:hover::after {
-    width: 100%;
-}
-
-.navbar a.active {
-    color: #ffcc00;
-    text-decoration: underline;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
-}
-
->>>>>>> origin/main
 /* Tagline Section */
 #tagline-section {
     display: flex;
@@ -551,32 +356,6 @@ header:hover {
     opacity: 1;
 }
 
-<<<<<<< HEAD
-=======
-/* Quick Navigation Bar */
-.quick-nav {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.quick-nav a {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: 50%;
-    text-decoration: none;
-}
-
-.quick-nav a:hover {
-    background-color: #ffcc00;
-}
-
->>>>>>> origin/main
 /* About Section */
 /* About Us Section Styling */
 .about-section {
@@ -584,7 +363,7 @@ header:hover {
     color: #fff;
     padding: 50px 20px;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Note: This overrides the Segoe UI stack from body */
 }
 
 .about-section h2 {
@@ -710,10 +489,24 @@ header:hover {
     .vision-mission p {
         font-size: 1rem;
     }
+    /* Add responsive styles for #car-slider .car-card if not already present */
+    #car-slider .car-card {
+        min-width: 280px; /* Adjust for smaller screens */
+        max-width: 90%;
+    }
+    .explore-page-title, #features h2, #car-slider h2 {
+        font-size: 2rem; /* Adjust titles for smaller screens */
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    #dynamic-tagline {
+        font-size: 1.8rem;
+    }
 }
 
 /* Animations */
-@keyframes slideDown {
+@keyframes slideDown { /* This seems to be a general animation, might be for the old header */
     from {
         transform: translateY(-100%);
     }
@@ -722,7 +515,6 @@ header:hover {
     }
 }
 
-<<<<<<< HEAD
 @keyframes fadeInOnScroll {
     from {
         opacity: 0;
@@ -743,8 +535,4 @@ header:hover {
     animation-name: fadeInOnScroll;
     animation-duration: 0.8s;
     animation-timing-function: ease-out;
-=======
-header {
-    animation: slideDown 0.5s ease-out;
->>>>>>> origin/main
 }
