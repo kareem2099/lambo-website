@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     setupTaglineRotation();
     setupAutoScrollShowcase();
     handleColorChange();
+<<<<<<< HEAD
     setupParallaxHero(); // Added parallax setup
+=======
+>>>>>>> origin/main
 });
 
 // Smooth scrolling for anchor links
@@ -25,7 +28,11 @@ function setupSmoothScrolling() {
 
 // Load the header dynamically
 function loadHeader() {
+<<<<<<< HEAD
     const headerPath = "../../header.html"; // Corrected path to root header.html
+=======
+    const headerPath = "../header.html";
+>>>>>>> origin/main
     console.log("Attempting to load header from:", headerPath);
 
     fetch(headerPath)
@@ -40,6 +47,7 @@ function loadHeader() {
         .catch(err => console.error("Error loading header:", err));
 }
 
+<<<<<<< HEAD
 // General Intersection Observer for fade-in animations on scroll
 function setupLazyLoad() {
     const elementsToFadeIn = document.querySelectorAll('section, .feature, .contact-card'); // Added .contact-card
@@ -78,6 +86,22 @@ function setupLazyLoad() {
         }
         observer.observe(el);
     });
+=======
+// Lazy load animations for elements
+function setupLazyLoad() {
+    const featureElements = document.querySelectorAll(".feature");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    featureElements.forEach(feature => observer.observe(feature));
+>>>>>>> origin/main
 }
 
 // Splash screen initialization
@@ -86,6 +110,7 @@ function initializeSplashScreen() {
     const splashVideo = document.getElementById("splash-video");
 
     if (splashScreen && splashVideo) {
+<<<<<<< HEAD
         // Video should be autoplaying due to attributes in index.html (autoplay muted loop playsinline)
         console.log("Splash screen video found.");
 
@@ -101,12 +126,40 @@ function initializeSplashScreen() {
     } else if (document.getElementById("home")) { // Only run scrollIntoView if #home exists (i.e., not on splash-only index.html)
         // This part is for pages other than index.html if they had a splash screen concept
         // For now, index.html is the only one with #splash-screen
+=======
+        // Attempt to play the video with sound
+        splashVideo.play().then(() => {
+            // Video started playing
+            console.log("Video is playing with sound.");
+        }).catch(error => {
+            console.error("Error playing video:", error);
+        });
+
+        // Try to unmute after 1 second (in case of initial mute issues)
+        setTimeout(() => {
+            if (splashVideo.muted) {
+                splashVideo.muted = false;  // Unmute video after a short delay
+                console.log("Unmuting video.");
+            }
+        }, 1000);
+
+        // Hide splash screen after 15 seconds
+        setTimeout(() => {
+            splashVideo.pause();
+            splashScreen.classList.add("hidden");
+            setTimeout(() => {
+                splashScreen.style.display = "none";
+                document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+            }, 500);
+        }, 15000);
+>>>>>>> origin/main
     }
 }
 
 
 // Tagline rotation with dynamic background images
 function setupTaglineRotation() {
+<<<<<<< HEAD
     const taglineElement = document.getElementById("dynamic-tagline");
     if (!taglineElement) { // Guard clause
         return;
@@ -115,6 +168,12 @@ function setupTaglineRotation() {
         { text: "Speed Redefined", image: "../../lambo-home.jpg" },
         { text: "Luxury in Motion", image: "../../explore/images/lambo-aventador.jpg" },
         { text: "Experience the Power", image: "../../explore/images/lambo-veneno.jpg" }
+=======
+    const taglines = [
+        { text: "Speed Redefined", image: "../lambo-home.jpg" },
+        { text: "Luxury in Motion", image: "../explore/images/lambo-aventador.jpg" },
+        { text: "Experience the Power", image: "../explore/images/lambo-veneno.jpg" }
+>>>>>>> origin/main
     ];
     let index = 0;
 
@@ -134,9 +193,12 @@ function setupTaglineRotation() {
 // Auto-scroll functionality for the car showcase
 function setupAutoScrollShowcase() {
     const carShowcase = document.querySelector(".car-slider");
+<<<<<<< HEAD
     if (!carShowcase) { // Guard clause
         return;
     }
+=======
+>>>>>>> origin/main
     let scrollAmount = 0;
     const scrollStep = 200;
     const scrollInterval = 10000;
@@ -175,6 +237,7 @@ function handleRegister() {
 function exploreNow() {
     window.location.href = "/explore/explore.html";
 }
+<<<<<<< HEAD
 
 // Parallax effect for the Hero section background
 function setupParallaxHero() {
@@ -192,3 +255,5 @@ function setupParallaxHero() {
         }
     });
 }
+=======
+>>>>>>> origin/main

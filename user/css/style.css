@@ -3,21 +3,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD
     background-color: #080808; /* Slightly off-black for depth */
     padding: 0.8rem 2.5rem; /* Increased padding */
+=======
+    background-color: #000;
+    padding: 0.5rem 2rem;
+>>>>>>> origin/main
     color: #fff;
     position: sticky;
     top: 0;
     z-index: 1000;
+<<<<<<< HEAD
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* Refined shadow */
     border-bottom: 1px solid #222; /* Subtle bottom border */
+=======
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+>>>>>>> origin/main
 }
 
 /* Navbar Styles */
 .navbar {
     list-style: none;
     display: flex;
+<<<<<<< HEAD
     gap: 2.5rem; /* Increased gap */
+=======
+    gap: 2rem;
+>>>>>>> origin/main
     margin: 0;
     padding: 0;
 }
@@ -28,6 +41,7 @@
 
 .navbar a {
     text-decoration: none;
+<<<<<<< HEAD
     font-family: 'Segoe UI', 'Roboto', sans-serif; /* Modern font stack */
     font-size: 1rem;
     font-weight: 600; /* Slightly bolder */
@@ -42,6 +56,17 @@
 .navbar a:hover {
     color: #f6c700; /* Lamborghini Gold on hover */
     transform: translateY(-2px); /* Slight lift on hover */
+=======
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1rem;
+    color: #f6c700;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #fff;
+>>>>>>> origin/main
 }
 
 .navbar a::after {
@@ -51,7 +76,11 @@
     bottom: 0;
     width: 0;
     height: 2px;
+<<<<<<< HEAD
     background-color: #f6c700; /* Lamborghini Gold underline */
+=======
+    background-color: #6b00f6;
+>>>>>>> origin/main
     transition: width 0.3s ease;
 }
 
@@ -60,6 +89,7 @@
 }
 
 .navbar a.active {
+<<<<<<< HEAD
     color: #f6c700; /* Active link in Gold */
     /* text-decoration: underline; */ /* Replaced by ::after */
     /* background-color: #333; */ /* Removed background for active */
@@ -72,6 +102,15 @@
 }
 
 
+=======
+    color: #ffcc00;
+    text-decoration: underline;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+>>>>>>> origin/main
 /* Auth Buttons */
 .auth-buttons {
     display: flex;
@@ -79,6 +118,7 @@
 }
 
 .auth-buttons button {
+<<<<<<< HEAD
     background-color: transparent;
     color: #f6c700; /* Gold text */
     border: 2px solid #f6c700; /* Gold border */
@@ -97,4 +137,21 @@
     background-color: #f6c700; /* Gold background on hover */
     color: #080808; /* Dark text on hover */
     transform: translateY(-2px); /* Slight lift */
+=======
+    background-color: #f6c700;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.auth-buttons button:hover {
+    background-color: #6b00f6;
+    color: #fff;
+>>>>>>> origin/main
 }
