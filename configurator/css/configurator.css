@@ -1,6 +1,5 @@
 /* General Body Styling */
 body {
-<<<<<<< HEAD
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
     margin: 0;
     padding: 0;
@@ -18,7 +17,7 @@ body {
     padding-bottom: 40px; /* Space at the bottom */
 }
 
-.configurator-page-title { /* Was h2, now h1 with this class */
+.configurator-page-title { 
     color: #f6c700; /* Lamborghini Gold */
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -29,24 +28,24 @@ body {
 
 /* Stage Titles */
 .config-stage h3 {
-    margin-bottom: 30px; /* Increased margin */
+    margin-bottom: 30px; 
     color: #f6c700; /* Lamborghini Gold */
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 1.8rem; /* Adjusted size */
+    font-size: 1.8rem; 
 }
 
 /* General Buttons Styling for Configurator Stages */
 .config-stage button, 
-.wheel-options button, /* Ensure these specific buttons are also targeted if not inheriting */
-.interior-options button { /* Ensure these specific buttons are also targeted if not inheriting */
+.wheel-options button, 
+.interior-options button { 
     padding: 12px 25px;
     font-size: 1rem;
     font-weight: 600;
     border: 2px solid #f6c700;
     border-radius: 8px;
-    background-color: #f6c700; /* Gold background for primary actions */
-    color: #0a0a0a; /* Dark text */
+    background-color: #f6c700; 
+    color: #0a0a0a; 
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -57,7 +56,7 @@ body {
 .config-stage button:hover,
 .wheel-options button:hover,
 .interior-options button:hover {
-    background-color: #ffdd40; /* Lighter gold on hover */
+    background-color: #ffdd40; 
     color: #000;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(246, 199, 0, 0.3);
@@ -84,80 +83,19 @@ body {
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
-=======
-    font-family: 'Lato', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(180deg, #000000, #333333);
-    color: #ffffff;
-    text-align: center;
-}
-
-/* Header Styling */
-h2 {
-    color: #ffcc00;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 20px;
-}
-
-h3 {
-    margin-bottom: 20px;
-    color: #ffcc00;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-/* Buttons Styling */
-button {
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: 2px solid #ffcc00;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #ffcc00, #ffa500);
-    color: #000000;
-    cursor: pointer;
-    text-transform: uppercase;
-    margin: 10px;
-    transition: transform 0.3s, background 0.3s;
-}
-
-button:hover {
-    background: linear-gradient(135deg, #ffa500, #ff7700);
-    transform: scale(1.1);
-}
-
-button:disabled {
-    background: #555555;
-    color: #aaaaaa;
-    cursor: not-allowed;
->>>>>>> origin/main
 }
 
 /* Configurator Sections Styling */
 .config-stage {
-<<<<<<< HEAD
-    padding: 20px; /* Reduced padding as container has padding */
+    padding: 20px; 
     display: none;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Smoother transition */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; 
 }
 
 .config-stage.active {
-    display: block; /* JS handles this */
-=======
-    padding: 30px;
-    display: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
-}
-
-.config-stage.active {
-    display: block;
->>>>>>> origin/main
+    display: block; 
     opacity: 1;
     transform: translateY(0);
 }
@@ -166,17 +104,16 @@ button:disabled {
 .color-options, .wheel-options, .interior-options {
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-    gap: 20px; /* Increased gap */
+    gap: 20px; 
     flex-wrap: wrap;
-    margin-bottom: 20px; /* Space below options before buttons */
+    margin-bottom: 20px; 
 }
 
 /* Color Buttons (Circular Swatches) */
 .color-btn {
-    width: 50px; /* Adjusted size */
+    width: 50px; 
     height: 50px;
-    border: 2px solid #555; /* Border to show definition */
+    border: 2px solid #555; 
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -188,64 +125,32 @@ button:disabled {
     transform: scale(1.15);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-.color-btn.selected { /* Style for selected color */
-    border-color: #f6c700; /* Gold border for selected */
+.color-btn.selected { 
+    border-color: #f6c700; 
     box-shadow: 0 0 10px rgba(246, 199, 0, 0.5);
     transform: scale(1.1);
 }
 
-
 /* Final Car Preview */
 #final-car-preview {
     max-width: 100%;
-    width: 500px; /* Fixed width for preview */
+    width: 500px; 
     height: auto;
-    border: 2px solid #f6c700; /* Gold border */
-    border-radius: 10px; /* Consistent radius */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+    border: 2px solid #f6c700; 
+    border-radius: 10px; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); 
     margin-top: 20px;
-    margin-bottom: 20px; /* Space below preview */
-=======
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* Color Buttons */
-.color-btn {
-    width: 60px;
-    height: 60px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.color-btn:hover {
-    transform: scale(1.2);
-    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.7);
-}
-
-/* Final Car Preview */
-#final-car-preview {
-    max-width: 80%;
-    height: auto;
-    border: 2px solid #ffcc00;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.5);
-    margin-top: 20px;
->>>>>>> origin/main
+    margin-bottom: 20px; 
 }
 
 /* Config Summary Styling */
 .config-summary {
     margin-top: 20px;
-<<<<<<< HEAD
-    padding: 25px; /* Increased padding */
-    background: #1c1c1c; /* Dark background */
-    border-radius: 10px; /* Consistent radius */
-    color: #f6c700; /* Gold text */
-    font-size: 1.1rem; /* Adjusted size */
+    padding: 25px; 
+    background: #1c1c1c; 
+    border-radius: 10px; 
+    color: #f6c700; 
+    font-size: 1.1rem; 
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -254,71 +159,18 @@ button:disabled {
     line-height: 1.6;
 }
 
-/* Removed specific fadeIn animation, assuming global fade-in or stage transition handles it */
-/* Removed body::before gradient animation for a cleaner, consistent dark background */
-=======
-    padding: 20px;
-    background: linear-gradient(135deg, #1a1a1a, #000000);
-    border-radius: 12px;
-    color: #ffcc00;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-}
-
-/* Animation for Transition */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Gradient Background Animation */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-45deg, #000000, #333333, #1a1a1a, #000000);
-    z-index: -1;
-    animation: gradientAnimation 8s infinite ease-in-out;
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
->>>>>>> origin/main
-
-
 .model-options {
     display: flex;
     flex-wrap: wrap;
-<<<<<<< HEAD
-    justify-content: center; /* Center cards */
-    gap: 25px; /* Increased gap */
-    padding: 10px 0; /* Adjusted padding */
+    justify-content: center; 
+    gap: 25px; 
+    padding: 10px 0; 
 }
 
 .model-card {
-    flex-basis: calc(33.333% - 30px); /* Adjust for 3 cards per row with gap */
-    min-width: 280px; /* Minimum width for smaller screens */
-    background: #1c1c1c; /* Dark card background */
+    flex-basis: calc(33.333% - 30px); 
+    min-width: 280px; 
+    background: #1c1c1c; 
     color: #e0e0e0;
     border: 1px solid #333;
     border-radius: 15px;
@@ -339,110 +191,16 @@ body::before {
     transform: scale(1.02);
 }
 
-
 .model-card h4 {
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 1.5rem; /* Adjusted size */
+    font-size: 1.5rem; 
     font-weight: 600;
-    color: #f6c700; /* Gold title */
+    color: #f6c700; 
 }
 
 .model-card p {
-    font-size: 0.9rem; /* Adjusted size */
+    font-size: 0.9rem; 
     color: #b0b0b0;
     line-height: 1.5;
 }
-
-/* Removing .color-card styles as .color-btn is preferred for swatches. If image-based color cards are used, these would need restyling. */
-
-
-/* Quick Navigation Bar - REMOVED */
-=======
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-}
-
-.model-card {
-    flex: 1 1 calc(33% - 20px);
-    background: linear-gradient(135deg, #1a1a1a, #333);
-    color: #ffcc00;
-    border: 2px solid #ffcc00;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.model-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.5);
-}
-
-.model-card h4 {
-    margin: 10px 0;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.model-card p {
-    font-size: 14px;
-}
-
-.color-card {
-    display: inline-block;
-    text-align: center;
-    margin: 10px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.color-card img {
-    width: 150px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 5px;
-}
-
-.color-card button {
-    display: block;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.color-card button:hover {
-    background-color: #444;
-}
-
-/* Quick Navigation Bar */
-.quick-nav {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.quick-nav a {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: 50%;
-    text-decoration: none;
-}
-
-.quick-nav a:hover {
-    background-color: #ffcc00;
-}
->>>>>>> origin/main

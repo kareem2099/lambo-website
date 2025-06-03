@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Lamborghini Configurator</title> <!-- Changed title slightly -->
+    <title>Lamborghini Configurator</title>
     <link rel="stylesheet" href="css/configurator.css">
-    <!-- <link rel="stylesheet" href="../css/style.css"> Main style.css might conflict or be redundant, review after configurator.css changes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
 </head>
 <body>
@@ -15,107 +13,81 @@
         <h1 class="configurator-page-title">Customize Your Lamborghini</h1> <!-- Changed h2 to h1 for main title -->
         <div id="configurator">
             <!-- Stage 1: Choose Model -->
-=======
-    <title>Lamborghini Customizer</title>
-    <link rel="stylesheet" href="css/configurator.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-    <h2>Customize Your Lamborghini</h2>
-    <div id="configurator">
-        <!-- Stage 1: Choose Model -->
->>>>>>> origin/main
-        <div class="config-stage active" id="model-stage">
-            <h3>Choose Your Lamborghini Model</h3>
-            <div class="model-options">
-                <div class="model-card" onclick="selectModel('Aventador')">
-                    <h4>Aventador</h4>
-                    <p>High performance V12 engine</p>
+            <div class="config-stage active" id="model-stage">
+                <h3>Choose Your Lamborghini Model</h3>
+                <div class="model-options">
+                    <div class="model-card" onclick="selectModel('Aventador')">
+                        <h4>Aventador</h4>
+                        <p>High performance V12 engine</p>
+                    </div>
+                    <div class="model-card" onclick="selectModel('Huracán')">
+                        <h4>Huracán</h4>
+                        <p>Compact and versatile V10 engine</p>
+                    </div>
+                    <div class="model-card" onclick="selectModel('Urus')">
+                        <h4>Urus</h4>
+                        <p>Luxury SUV with sporty dynamics</p>
+                    </div>
+                    <div class="model-card" onclick="selectModel('Gallardo')">
+                        <h4>Gallardo</h4>
+                        <p>Classic and timeless design</p>
+                    </div>
+                    <div class="model-card" onclick="selectModel('Sián')">
+                        <h4>Sián</h4>
+                        <p>The Futuristic Hybrid</p>
+                    </div>
+                    <div class="model-card" onclick="selectModel('veneno')">
+                        <h4>veneno</h4>
+                        <p>Unleashing the Beast</p>
+                    </div>
                 </div>
-                <div class="model-card" onclick="selectModel('Huracán')">
-                    <h4>Huracán</h4>
-                    <p>Compact and versatile V10 engine</p>
-                </div>
-                <div class="model-card" onclick="selectModel('Urus')">
-                    <h4>Urus</h4>
-                    <p>Luxury SUV with sporty dynamics</p>
-                </div>
-                <div class="model-card" onclick="selectModel('Gallardo')">
-                    <h4>Gallardo</h4>
-                    <p>Classic and timeless design</p>
-                </div>
-                <div class="model-card" onclick="selectModel('Sián')">
-                    <h4>Sián</h4>
-                    <p>The Futuristic Hybrid</p>
-                </div>
-                <div class="model-card" onclick="selectModel('veneno')">
-                    <h4>veneno</h4>
-                    <p>Unleashing the Beast</p>
-                </div>
+                <button onclick="proceedToColor()">Next: Choose Color</button>
             </div>
-            <button onclick="proceedToColor()">Next: Choose Color</button>
-        </div>
 
-        <!-- Stage 2: Choose Color -->
-        <div class="config-stage" id="color-stage">
-            <h3>Choose Your Car Color</h3>
-            <div class="color-options" id="color-options"></div>
-            <button onclick="proceedToWheels()">Next: Choose Wheels</button>
-            <button onclick="goBackToModel()">Back: Choose Model</button>
-        </div>
-
-        <!-- Stage 3: Choose Wheels -->
-        <div class="config-stage" id="wheels-stage">
-            <h3>Choose Your Wheels</h3>
-            <div class="wheel-options">
-                <button onclick="selectWheels('sport')">Sport</button>
-                <button onclick="selectWheels('classic')">Classic</button>
-                <button onclick="selectWheels('carbon')">Carbon Fiber</button>
+            <!-- Stage 2: Choose Color -->
+            <div class="config-stage" id="color-stage">
+                <h3>Choose Your Car Color</h3>
+                <div class="color-options" id="color-options"></div>
+                <button onclick="proceedToWheels()">Next: Choose Wheels</button>
+                <button onclick="goBackToModel()">Back: Choose Model</button>
             </div>
-            <button onclick="proceedToInterior()">Next: Interior Options</button>
-            <button onclick="goBackToColor()">Back: Choose Color</button>
-        </div>
 
-        <!-- Stage 4: Choose Interior -->
-        <div class="config-stage" id="interior-stage">
-            <h3>Choose Your Interior</h3>
-            <div class="interior-options">
-                <button onclick="selectInterior('leather')">Leather</button>
-                <button onclick="selectInterior('alcantara')">Alcantara</button>
+            <!-- Stage 3: Choose Wheels -->
+            <div class="config-stage" id="wheels-stage">
+                <h3>Choose Your Wheels</h3>
+                <div class="wheel-options">
+                    <button onclick="selectWheels('sport')">Sport</button>
+                    <button onclick="selectWheels('classic')">Classic</button>
+                    <button onclick="selectWheels('carbon')">Carbon Fiber</button>
+                </div>
+                <button onclick="proceedToInterior()">Next: Interior Options</button>
+                <button onclick="goBackToColor()">Back: Choose Color</button>
             </div>
-            <button onclick="finalizeCustomization()">Finish: Show My Lamborghini</button>
-            <button onclick="goBackToWheels()">Back: Choose Wheels</button>
-        </div>
 
-        <!-- Final Stage: Summary -->
-        <div class="config-stage" id="summary-stage">
-            <h3>Your Customized Lamborghini</h3>
-            <img src="images/black-car.jpg" alt="Customized Lamborghini" id="final-car-preview">
-            <div class="config-summary" id="summary-text">
-                Model: Aventador | Color: Black | Wheels: Classic | Interior: Leather
+            <!-- Stage 4: Choose Interior -->
+            <div class="config-stage" id="interior-stage">
+                <h3>Choose Your Interior</h3>
+                <div class="interior-options">
+                    <button onclick="selectInterior('leather')">Leather</button>
+                    <button onclick="selectInterior('alcantara')">Alcantara</button>
+                </div>
+                <button onclick="finalizeCustomization()">Finish: Show My Lamborghini</button>
+                <button onclick="goBackToWheels()">Back: Choose Wheels</button>
             </div>
-            <button onclick="startOver()">Start Over</button>
-        </div>
-<<<<<<< HEAD
+
+            <!-- Final Stage: Summary -->
+            <div class="config-stage" id="summary-stage">
+                <h3>Your Customized Lamborghini</h3>
+                <img src="images/black-car.jpg" alt="Customized Lamborghini" id="final-car-preview">
+                <div class="config-summary" id="summary-text">
+                    Model: Aventador | Color: Black | Wheels: Classic | Interior: Leather
+                </div>
+                <button onclick="startOver()">Start Over</button>
+            </div>
         </div>
     </div> <!-- Closing configurator-page-container -->
 
     <script src="js/configurator.js"></script>
     <script src="/user/js/script.js"></script> <!-- This should load the main header -->
-=======
-    </div>
-
-     <!-- Quick Navigation Bar -->
-     <div class="quick-nav">
-        <a href="home.html" title="Home Page">Home</a>
-        <a href="about.html" title="About Us">About</a>
-        <a href="/explore/explore.html" title="Explore">Explore</a>
-        <a href="/booking/booking.html" title="Book Now">Book</a>
-        <a href="/contact/contact.html" title="Contact">Contact</a>
-    </div>
-
-    <script src="js/configurator.js"></script>
-    <script src="/user/js/script.js"></script>
->>>>>>> origin/main
 </body>
 </html>

@@ -95,10 +95,13 @@ function initializeSplashScreen() {
             setTimeout(() => {
                 // Check if current page is index.html before redirecting
                 if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html')) {
+                    console.log("Redirecting to home.html from path:", window.location.pathname); 
                     window.location.href = "home.html"; 
+                } else {
+                    console.log("Not on index.html, no redirect. Pathname:", window.location.pathname); 
                 }
             }, 500); 
-        }, 5000); 
+        }, 15000); // Changed to 15 seconds
     } else if (document.getElementById("home")) { 
         // This logic was for scrolling into view if #home existed,
         // but splash screen is only on index.html now.

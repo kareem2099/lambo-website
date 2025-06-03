@@ -1,10 +1,10 @@
 /* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent modern font */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0a0a0a; /* Consistent dark background */
-    color: #e0e0e0; /* Default light text */
+    background-color: #0a0a0a;
+    color: #e0e0e0;
     overflow-x: hidden; 
 }
 
@@ -16,9 +16,7 @@ body {
     padding-right: 20px;
 }
 
-/* Header - REMOVED, main header will be loaded */
-
-.model-page-title { /* Styles for the H1 model name */
+.model-page-title {
     font-size: 3.5rem; 
     margin: 60px 0 40px 0; 
     text-transform: uppercase;
@@ -28,10 +26,10 @@ body {
     color: #FFA500; /* Primary Accent: Orange */
 }
 
-.animate-title {
+.animate-title { /* Animation for the page title */
     animation: title-fade-in-huracan 1.5s ease-out forwards; 
 }
-@keyframes title-fade-in-huracan { /* Unique animation name */
+@keyframes title-fade-in-huracan {
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
 }
@@ -73,8 +71,15 @@ section h2::after {
     display: block;
     margin: 0 auto;
     border-radius: 10px;
-    border: 2px solid #333; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 2px solid #2c2c2c; /* Slightly darker, more defined border */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5); /* Enhanced shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#car-video video:hover {
+    border-color: #FFA500; /* Orange border on hover */
+    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.3); /* Orange glow shadow on hover */
+    transform: scale(1.01); /* Slight scale on hover */
 }
 
 /* Features Section */
@@ -142,9 +147,7 @@ section h2::after {
     border-color: #007BFF; /* Secondary Accent: Blue on hover */
 }
 
-/* Footer - REMOVED */
-
-/* Responsive Design - Keep if needed, or manage globally */
+/* Responsive Design */
 @media (max-width: 768px) {
     #car-gallery img {
         width: calc(100% - 10px); /* Full width on smaller screens */
