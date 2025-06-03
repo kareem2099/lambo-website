@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+    background-color: #0a0a0a; /* Consistent dark background */
+    margin: 0;
+    color: #e0e0e0; /* Light grey text */
+    padding-top: 50px; /* To clear the sticky header (approx height) */
+}
+
+.contact-page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-page-title {
+    color: #f6c700; /* Lamborghini Gold */
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px; /* Existing margin */
+    margin-top: 60px; /* To match section padding on other pages */
+}
+
+.contact-page-subtitle {
+    font-size: 1.1rem;
+    color: #b0b0b0; /* Lighter grey */
+    margin-bottom: 50px; /* Increased margin */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header Section - REMOVED */
+
+/* Contact Section */
+.contact-section {
+    padding: 0 20px 40px; /* Adjusted padding */
+    text-align: center;
+    /* background: #1a1a1a; Removed, body bg is dark */
+}
+
+/* .section-title and .contact-text REMOVED as their content is in page title/subtitle */
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased gap */
+    justify-content: center;
+}
+
+.contact-card {
+    background: #1c1c1c; /* Dark card background */
+    color: #e0e0e0;
+    padding: 30px; /* Increased padding */
+    border-radius: 15px; /* More rounded */
+    width: 300px; /* Adjusted width */
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #333; /* Subtle border */
+    /* Add fade-in-section class in HTML or via JS for animation */
+}
+
+.contact-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 10px rgba(246, 199, 0, 0.2);
+    border-color: #f6c700;
+}
+
+.contact-card i { /* Styling for new icons */
+    font-size: 2.5rem;
+    color: #f6c700; /* Lamborghini Gold */
+    margin-bottom: 20px;
+    display: block; /* Ensure it takes space */
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover i {
+    transform: scale(1.1);
+}
+
+.contact-card h3 {
+    font-size: 1.4rem; /* Adjusted size */
+    color: #f6c700; /* Gold */
+    margin-top: 0; /* Reset margin if icon is above */
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+    color: #c0c0c0; /* Lighter grey for paragraph */
+}
+
+.contact-card a {
+    color: #f6c700; /* Gold for links */
+    text-decoration: none;
+    font-weight: 500; /* Normal weight, gold is enough emphasis */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: #ffdd40; /* Lighter gold on hover */
+    text-shadow: 0 0 5px rgba(246, 199, 0, 0.5);
+}
+
+/* Quick Navigation Bar - REMOVED */
+
+/* Animations - REMOVED, assuming global fade-in from main css/style.css will be used via JS */
+/* If user/js/script.js doesn't apply fade-in to these cards, we might need to add specific JS or keep local animations */

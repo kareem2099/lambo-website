@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-content" id="hero-content">
+            <h1>Welcome to Lamborghini</h1>
+            <p id="dynamic-tagline"></p>
+            <button onclick="exploreNow()" aria-label="Explore Lamborghini Models">Explore Now</button>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" role="region" aria-labelledby="features-title">
+        <h2 id="features-title">Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Unmatched Speed</h3>
+                <p>Top speeds of over 350 km/h.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-car"></i>
+                <h3>Innovative Design</h3>
+                <p>Bold aesthetics and aerodynamics.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-cogs"></i>
+                <h3>Engineered Excellence</h3>
+                <p>State-of-the-art technology and precision.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Showcase Section -->
+    <section id="car-slider"> <!-- Renamed id to car-slider to match CSS -->
+        <h2>Explore Our Models</h2>
+        <div class="car-slider"> <!-- Changed class to car-slider for JS auto-scroll -->
+            <div class="car-card">
+                <img src="explore/images/lambo-aventador.jpg" alt="Lamborghini Aventador" loading="lazy">
+                <h3>Aventador</h3>
+                <p>The iconic Lamborghini Aventador.</p>
+            </div>
+            <div class="car-card"> <!-- Added class="car-card" -->
+                <img src="lambo-home.jpg" alt="Lamborghini Huracan" loading="lazy">
+                <h3>Huracan</h3>
+                <p>The dynamic Lamborghini Huracan.</p>
+            </div>
+            <div class="car-card"> <!-- Added class="car-card" -->
+                <img src="explore/images/lambo-urus.jpeg" alt="Lamborghini Urus" loading="lazy">
+                <h3>Urus</h3>
+                <p>The versatile Lamborghini Urus.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="/user/js/script.js"></script>
+</body>
+</html>

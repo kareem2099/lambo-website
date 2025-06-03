@@ -1,0 +1,217 @@
+/* General Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a; /* Consistent dark background */
+    color: #e0e0e0; /* Light grey text */
+    text-align: center;
+}
+
+.configurator-page-container {
+    padding-top: 50px; /* To clear sticky header */
+    max-width: 1000px; /* Max width for configurator content */
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px; /* Space at the bottom */
+}
+
+.configurator-page-title { /* Was h2, now h1 with this class */
+    color: #f6c700; /* Lamborghini Gold */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 2.8rem;
+    margin-top: 60px; /* Consistent spacing below header */
+    margin-bottom: 40px;
+}
+
+/* Stage Titles */
+.config-stage h3 {
+    margin-bottom: 30px; /* Increased margin */
+    color: #f6c700; /* Lamborghini Gold */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.8rem; /* Adjusted size */
+}
+
+/* General Buttons Styling for Configurator Stages */
+.config-stage button, 
+.wheel-options button, /* Ensure these specific buttons are also targeted if not inheriting */
+.interior-options button { /* Ensure these specific buttons are also targeted if not inheriting */
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #f6c700;
+    border-radius: 8px;
+    background-color: #f6c700; /* Gold background for primary actions */
+    color: #0a0a0a; /* Dark text */
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 10px 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.config-stage button:hover,
+.wheel-options button:hover,
+.interior-options button:hover {
+    background-color: #ffdd40; /* Lighter gold on hover */
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(246, 199, 0, 0.3);
+}
+
+/* Secondary/Back buttons styling */
+.config-stage button[onclick*="goBack"], 
+.config-stage button[onclick*="startOver"] {
+    background-color: transparent;
+    color: #f6c700;
+    border: 2px solid #f6c700;
+}
+
+.config-stage button[onclick*="goBack"]:hover, 
+.config-stage button[onclick*="startOver"]:hover {
+    background-color: #f6c700;
+    color: #0a0a0a;
+}
+
+.config-stage button:disabled {
+    background-color: #333;
+    border-color: #444;
+    color: #777;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Configurator Sections Styling */
+.config-stage {
+    padding: 20px; /* Reduced padding as container has padding */
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Smoother transition */
+}
+
+.config-stage.active {
+    display: block; /* JS handles this */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Options Containers */
+.color-options, .wheel-options, .interior-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Increased gap */
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Space below options before buttons */
+}
+
+/* Color Buttons (Circular Swatches) */
+.color-btn {
+    width: 50px; /* Adjusted size */
+    height: 50px;
+    border: 2px solid #555; /* Border to show definition */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+}
+
+.color-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.color-btn.selected { /* Style for selected color */
+    border-color: #f6c700; /* Gold border for selected */
+    box-shadow: 0 0 10px rgba(246, 199, 0, 0.5);
+    transform: scale(1.1);
+}
+
+
+/* Final Car Preview */
+#final-car-preview {
+    max-width: 100%;
+    width: 500px; /* Fixed width for preview */
+    height: auto;
+    border: 2px solid #f6c700; /* Gold border */
+    border-radius: 10px; /* Consistent radius */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+    margin-top: 20px;
+    margin-bottom: 20px; /* Space below preview */
+}
+
+/* Config Summary Styling */
+.config-summary {
+    margin-top: 20px;
+    padding: 25px; /* Increased padding */
+    background: #1c1c1c; /* Dark background */
+    border-radius: 10px; /* Consistent radius */
+    color: #f6c700; /* Gold text */
+    font-size: 1.1rem; /* Adjusted size */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    line-height: 1.6;
+}
+
+/* Removed specific fadeIn animation, assuming global fade-in or stage transition handles it */
+/* Removed body::before gradient animation for a cleaner, consistent dark background */
+
+
+.model-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center cards */
+    gap: 25px; /* Increased gap */
+    padding: 10px 0; /* Adjusted padding */
+}
+
+.model-card {
+    flex-basis: calc(33.333% - 30px); /* Adjust for 3 cards per row with gap */
+    min-width: 280px; /* Minimum width for smaller screens */
+    background: #1c1c1c; /* Dark card background */
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.model-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 8px rgba(246, 199, 0, 0.2);
+    border-color: #f6c700;
+}
+.model-card.selected {
+    border-color: #f6c700;
+    box-shadow: 0 0 15px rgba(246, 199, 0, 0.4);
+    transform: scale(1.02);
+}
+
+
+.model-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Adjusted size */
+    font-weight: 600;
+    color: #f6c700; /* Gold title */
+}
+
+.model-card p {
+    font-size: 0.9rem; /* Adjusted size */
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+/* Removing .color-card styles as .color-btn is preferred for swatches. If image-based color cards are used, these would need restyling. */
+
+
+/* Quick Navigation Bar - REMOVED */

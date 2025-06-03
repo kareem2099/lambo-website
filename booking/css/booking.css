@@ -1,0 +1,196 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+    background-color: #0a0a0a; /* Consistent dark background */
+    margin: 0;
+    color: #e0e0e0; /* Light grey text for general content */
+    padding-top: 50px; /* To clear the sticky header (approx height) */
+}
+
+.booking-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.booking-page-title {
+    color: #f6c700; /* Lamborghini Gold */
+    text-align: center;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px; /* Existing margin */
+    margin-top: 60px; /* To match section padding on other pages */
+}
+
+/* Header Styling - REMOVED as main header is loaded */
+
+/* Container for Car Cards */
+.cars-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased gap */
+    justify-content: center;
+    padding: 20px 0; /* Adjusted padding */
+}
+
+/* Car Card Styles */
+.car-card {
+    background: #1c1c1c; /* Dark card background */
+    border: 1px solid #333; /* Subtle border */
+    border-radius: 15px; /* More rounded */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 320px; /* Adjusted width */
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+}
+
+.car-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 10px rgba(246, 199, 0, 0.2);
+    border-color: #f6c700;
+}
+
+.car-card img {
+    width: 100%;
+    height: 180px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the area */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none; /* Removed previous border */
+}
+
+.car-card h2 {
+    color: #f6c700; /* Gold for car names */
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.car-card p {
+    font-size: 0.9rem;
+    color: #b0b0b0; /* Lighter grey for price */
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allow p to take space before select/button */
+}
+
+
+/* Label and Select Styling */
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #c0c0c0; /* Light grey label */
+    font-weight: 600;
+    text-align: left;
+}
+
+select.days-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #444; /* Darker border */
+    border-radius: 8px; /* Softer radius */
+    background-color: #2c2c2c; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px; /* Space before button */
+    appearance: none; /* Remove default system appearance */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f6c700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 1em;
+}
+
+select.days-select:focus {
+    border-color: #f6c700; /* Gold border on focus */
+    background-color: #333; /* Slightly lighter dark on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button Styling */
+button.book-now {
+    background-color: #f6c700; /* Lamborghini Gold */
+    color: #0a0a0a; /* Dark text for contrast */
+    padding: 14px 20px; /* Increased padding */
+    font-size: 1.1rem; /* Increased font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    width: 100%;
+    margin-top: auto; /* Push button to bottom of flex card */
+}
+
+button.book-now:hover {
+    background-color: #ffdd40; /* Lighter gold on hover */
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(246, 199, 0, 0.3);
+}
+
+/* Booking Message and Video Modal */
+.booking-modal { /* Updated class name */
+    display: none; /* Initially hidden, JS will toggle */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Darker overlay */
+    z-index: 1001; /* Above header */
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-modal.hidden { /* Ensure this correctly hides */
+    display: none !important; 
+}
+
+.booking-modal-content {
+    background: #1c1c1c;
+    color: #e0e0e0;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 700px; /* Increased max-width */
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.close-modal-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-modal-button:hover {
+    color: #f6c700;
+}
+
+#booking-video {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #444; /* Subtle border */
+    margin-bottom: 20px;
+}
+
+#booking-modal p { /* Style for text within modal */
+    font-size: 1.1rem;
+    color: #f6c700;
+    margin-top: 10px;
+}
+
+/* Ensure .hidden class from global scope doesn't conflict if it has visibility: hidden */
+/* This is handled by .booking-modal.hidden display: none !important; */

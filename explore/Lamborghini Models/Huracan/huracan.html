@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini Huracán</title>
+    <link rel="stylesheet" href="css/huracan-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+</head>
+<body>
+    <!-- Main site header will be loaded by /user/js/script.js -->
+    <div class="model-page-container">
+        <h1 class="model-page-title animate-title">Lamborghini Huracán</h1>
+        <main>
+            <!-- Video Section -->
+            <section id="car-video" class="fade-in-section">
+                <h2>Unleash the Thrill</h2>
+            <video controls autoplay muted loop playsinline> <!-- Added muted, loop, playsinline -->
+                <source src="videos/huracan.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        
+        <!-- Features Section -->
+        <section id="car-features" class="fade-in-section">
+            <h2>Features</h2>
+            <ul>
+                <li>Engine: V10 5.2L</li>
+                <li>Top Speed: 325 km/h</li>
+                <li>0-100 km/h: 2.8 seconds</li>
+                <li>Price: $209,000</li>
+            </ul>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section id="car-gallery" class="fade-in-section">
+            <h2>Gallery</h2>
+            <div class="gallery-container">
+                <!-- Front and Back Views -->
+                <div class="gallery-column">
+                    <img src="images/huracan-front.jpg" alt="Lamborghini Huracán - Front View">
+                    <img src="images/huracan-back.jpg" alt="Lamborghini Huracán - Back View">
+                </div>
+                <!-- Side Left and Side Right Views -->
+                <div class="gallery-column">
+                    <img src="images/huracan-side-left.jpg" alt="Lamborghini Huracán - Side Left View">
+                    <img src="images/huracan-side-right.jpg" alt="Lamborghini Huracán - Side Right View">
+                </div>
+            </div>
+        </section>
+    </main>
+    </div> <!-- Closing model-page-container -->
+    <script src="../../../user/js/script.js"></script> <!-- Corrected path to global script -->
+    <!-- If Huracan has specific JS, link it here e.g. <script src="js/huracan-script.js"></script> -->
+</body>
+</html>

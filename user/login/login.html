@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini Login</title>
+    <link rel="stylesheet" href="/user/login/css/login-style.css">
+</head>
+<body>
+    <header>
+        <ul class="navbar">
+            <li><a href="/home.html" title="Go to Home">Home</a></li>
+            <li><a href="/explore/explore.html" title="Explore Our Models">Explore</a></li>
+            <li><a href="/contact/contact.html" title="Contact Us">Contact</a></li>
+        </ul>
+    </header>
+
+    <main class="login-container">
+        <div class="login-box">
+            <h1>Welcome Back</h1>
+            <p>Enter your credentials to access the world of Lamborghini.</p>
+            <form id="login-form" method="post">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email address" 
+                        aria-label="Email address" 
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Enter your password" 
+                        aria-label="Password" 
+                        required>
+                </div>
+                <button type="submit" class="btn" aria-label="Submit login form">Login</button>
+                <p class="register-link">Don't have an account? <a href="../reg/register.html">Register</a></p>
+            </form>
+        </div>
+    </main>
+    
+    <script src="/user/login/js/script.js"></script>
+</body>
+</html>

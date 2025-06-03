@@ -1,0 +1,100 @@
+/* Navigation Bar Container */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #080808; /* Slightly off-black for depth */
+    padding: 0.8rem 2.5rem; /* Increased padding */
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* Refined shadow */
+    border-bottom: 1px solid #222; /* Subtle bottom border */
+}
+
+/* Navbar Styles */
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem; /* Increased gap */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-family: 'Segoe UI', 'Roboto', sans-serif; /* Modern font stack */
+    font-size: 1rem;
+    font-weight: 600; /* Slightly bolder */
+    color: #aaa; /* Subdued default color */
+    text-transform: uppercase;
+    letter-spacing: 0.5px; /* Added letter spacing */
+    transition: color 0.3s ease, transform 0.2s ease;
+    position: relative; /* For the ::after pseudo-element */
+    padding-bottom: 5px; /* Space for underline */
+}
+
+.navbar a:hover {
+    color: #f6c700; /* Lamborghini Gold on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f6c700; /* Lamborghini Gold underline */
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a.active {
+    color: #f6c700; /* Active link in Gold */
+    /* text-decoration: underline; */ /* Replaced by ::after */
+    /* background-color: #333; */ /* Removed background for active */
+    /* padding: 10px; */ /* Padding handled by link itself */
+    /* border-radius: 5px; */
+}
+
+.navbar a.active::after { /* Ensure active link also has underline */
+    width: 100%;
+}
+
+
+/* Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-buttons button {
+    background-color: transparent;
+    color: #f6c700; /* Gold text */
+    border: 2px solid #f6c700; /* Gold border */
+    padding: 0.6rem 1.2rem; /* Adjusted padding */
+    font-family: 'Segoe UI', 'Roboto', sans-serif; /* Modern font stack */
+    font-size: 0.9rem; /* Slightly smaller for secondary action */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-buttons button:hover {
+    background-color: #f6c700; /* Gold background on hover */
+    color: #080808; /* Dark text on hover */
+    transform: translateY(-2px); /* Slight lift */
+}

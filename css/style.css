@@ -1,0 +1,525 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated font for consistency */
+    margin: 0;
+    padding: 0; /* Base body padding is 0 */
+    box-sizing: border-box;
+    background-color: #0a0a0a; /* Consistent dark background for all pages */
+    color: #e0e0e0; /* Default light text color */
+}
+
+/* Explore Page Specific Container & Title */
+.explore-page-container {
+    padding-top: 50px; /* To clear sticky header */
+    max-width: 1200px; /* Consistent with other page containers */
+    margin: 0 auto;
+    padding-left: 20px; /* Horizontal padding */
+    padding-right: 20px;
+}
+
+.explore-page-title {
+    color: #f6c700; /* Lamborghini Gold */
+    text-align: center;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 60px; /* Consistent spacing below header */
+    margin-bottom: 40px; /* Space before first section */
+}
+
+.explore-features { /* Specific class for features section on explore page if needed */
+    /* Styles for #features are already defined below, this class can be used for overrides or specific tweaks */
+}
+
+.explore-features-title { /* Specific class for features section title on explore page */
+    font-size: 2.5rem; /* Slightly smaller than main page title */
+    color: #f6c700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center; /* Ensure it's centered if not inheriting */
+}
+
+
+/* Hero Section */
+#home {
+    height: 100vh;
+    background: url('../lambo-home.jpg') no-repeat center center/cover; /* Initial background, JS will change it */
+    color: #fff; /* Changed to white for better contrast */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 1s ease-out;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem; /* Slightly increased size */
+    margin: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
+    color: #fff; /* Ensured white color */
+}
+
+.hero-content button {
+    background-color: #f6c700; /* Lamborghini Gold */
+    color: #111; /* Dark text for contrast on gold */
+    border: none;
+    padding: 15px 30px; /* Increased padding */
+    font-size: 1.2rem; /* Increased font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px; /* Added border-radius */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Added transform and shadow transition */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
+}
+
+.hero-content button:hover {
+    background-color: #fff; /* White background on hover */
+    color: #111; /* Dark text */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Dynamic Taglines */
+#dynamic-tagline {
+    font-size: 2.8rem; /* Slightly increased size */
+    margin-top: 20px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(10px); /* Slightly offset for animation effect */
+    color: #fff; /* Ensured white color */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Added text shadow */
+}
+
+#dynamic-tagline.show {
+    opacity: 1;
+    transform: translateY(0); /* Moves to normal position */
+}
+
+/* Splash Screen */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#splash-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#splash-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#splash-screen p {
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 10;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Features Section */
+#features {
+    padding: 80px 20px; /* Further increased padding */
+    background-color: #1a1a1a; /* Darker background for a more premium Lambo feel */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+}
+
+#features h2 { /* Style for the section title */
+    font-size: 2.8rem;
+    color: #f6c700; /* Lamborghini Gold */
+    margin-bottom: 50px; /* Increased margin */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.feature {
+    text-align: center;
+    padding: 30px; /* Increased padding */
+    background: #2c2c2c; /* Darker card background */
+    color: #f0f0f0; /* Light text color for dark background */
+    border: 1px solid #444; /* Subtle border */
+    border-radius: 15px; /* More rounded corners */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, opacity 0.5s ease-out;
+    flex: 1;
+    max-width: 340px; /* Slightly increased max-width */
+    opacity: 0; /* Start with opacity 0 for JS reveal */
+    transform: translateY(50px);
+    position: relative; /* For pseudo-elements if needed for border animation */
+    overflow: hidden; /* For potential pseudo-element animations */
+}
+
+.feature h3 {
+    color: #f6c700; /* Lamborghini Gold for headings */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #d0d0d0; /* Slightly lighter paragraph text */
+}
+
+.feature i {
+    font-size: 3rem; /* Increased icon size */
+    color: #f6c700; /* Lamborghini Gold */
+    margin-bottom: 20px; /* Increased margin */
+    transition: transform 0.3s ease; /* Transition for icon hover */
+}
+
+.feature:hover {
+    transform: translateY(-10px) scale(1.03); /* More pronounced lift */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(246, 199, 0, 0.3); /* Dark shadow + Gold glow */
+    border-color: #f6c700; /* Gold border on hover */
+}
+
+.feature:hover i {
+    transform: scale(1.1) rotate(5deg); /* Icon scales and slightly rotates on card hover */
+}
+
+/* Car Showcase */
+.car-showcase {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.car-showcase img {
+    width: 300px;
+    height: auto;
+    scroll-snap-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.car-showcase img:hover {
+    transform: scale(1.1);
+}
+
+/* Car Slider Section */
+#car-slider {
+    background: #0a0a0a; /* Darker, more premium background */
+    color: #fff;
+    padding: 60px 20px; /* Increased padding */
+    text-align: center;
+    overflow: hidden; /* Prevent scrollbars */
+    position: relative;
+}
+
+#car-slider h2 { /* Style for the section title */
+    font-size: 2.5rem;
+    color: #f6c700; /* Lamborghini Gold */
+    margin-bottom: 40px; /* Increased margin */
+    text-transform: uppercase;
+}
+
+#car-slider .car-slider {
+    display: flex;
+    gap: 30px; /* Increased gap */
+    animation: scrollCars 25s linear infinite; /* Slightly adjusted animation speed */
+    justify-content: flex-start;
+    width: max-content;
+}
+
+#car-slider .car-card {
+    background: #1c1c1c; /* Slightly lighter card background */
+    border-radius: 15px; /* Increased border-radius */
+    padding: 25px; /* Increased padding */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
+    text-align: center;
+    min-width: 380px; /* Adjusted width */
+    max-width: 380px; /* Adjusted width */
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover */
+}
+
+#car-slider .car-card:hover {
+    transform: translateY(-10px) scale(1.03); /* Lift and slight scale on hover */
+    box-shadow: 0 10px 30px rgba(246, 199, 0, 0.3); /* Gold glow shadow on hover */
+}
+
+#car-slider .car-card img {
+    width: 100%; /* Make image responsive within card */
+    height: 220px; /* Adjusted height */
+    object-fit: cover;
+    border-radius: 10px; /* Consistent border-radius */
+    margin-bottom: 15px; /* Increased margin */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Added filter transition */
+}
+
+#car-slider .car-card img:hover {
+    transform: scale(1.05); /* Slightly scale image on hover */
+    filter: brightness(1.1); /* Slightly brighten image on hover */
+}
+
+#car-slider .car-card h3 {
+    font-size: 1.5rem; /* Increased font size */
+    color: #f6c700;
+    margin-top: 10px; /* Increased margin */
+    margin-bottom: 10px; /* Added margin */
+}
+
+#car-slider .car-card p { /* Style for paragraph text in card */
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Animation for continuous scrolling */
+@keyframes scrollCars {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Countdown Timer */
+#event-countdown {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tagline Section */
+#tagline-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.tagline {
+    display: none;
+    text-align: center;
+    margin-bottom: 50px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.tagline h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.tagline img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.tagline.show {
+    display: block;
+    opacity: 1;
+}
+
+/* About Section */
+/* About Us Section Styling */
+.about-section {
+    background: #111; /* Dark background for luxury */
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.about-section h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #f6c700; /* Lamborghini gold accent */
+}
+
+.about-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+}
+
+.about-section h3 i {
+    margin-right: 10px;
+    color: #f6c700;
+}
+
+/* History Timeline */
+.history ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.history li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    border-left: 3px solid #f6c700;
+    padding-left: 15px;
+    line-height: 1.6;
+}
+
+/* Vision & Mission */
+.vision-mission p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Core Values */
+.core-values {
+    margin: 40px 0;
+}
+
+.core-values .value-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.core-values .value {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #222, #333);
+    color: #f6c700;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.core-values .value:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+}
+
+.core-values .value i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Achievements & Global Presence */
+.achievements, .global-presence {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.achievements h3, .global-presence h3 {
+    color: #f6c700;
+}
+
+/* Section Dividers */
+.about-section > div {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #333;
+}
+
+.about-section > div:last-child {
+    border-bottom: none;
+}
+
+/* Icon Styling */
+.about-section i {
+    color: #f6c700;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .core-values .value-grid {
+        flex-direction: column;
+    }
+
+    .history li {
+        font-size: 1rem;
+    }
+
+    .vision-mission p {
+        font-size: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInOnScroll {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Start slightly lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-section {
+    opacity: 0; /* Initially hidden */
+    animation-fill-mode: forwards; /* Keep state after animation */
+}
+
+.fade-in-section.visible {
+    animation-name: fadeInOnScroll;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+}
